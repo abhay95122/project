@@ -1,0 +1,351 @@
+{% extends 'index.html' %}
+
+
+{% load static %}
+
+{% block content %}
+<!--begin::Toolbar-->
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+    <!--begin::Toolbar container-->
+    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+        <!--begin::Page title-->
+        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+            <!--begin::Title-->
+            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Product Form
+            </h1>
+            <!--end::Title-->
+            <!--begin::Breadcrumb-->
+            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a href="{% url 'index' %}" class="text-muted text-hover-primary">Home</a>
+                </li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                </li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">product</li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                </li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">Add products</li>
+                <!--end::Item-->
+            </ul>
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page title-->
+    </div>
+    <!--end::Toolbar container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Content-->
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <!--begin::Content container-->
+    <div id="kt_app_content_container" class="app-container container-xxl">
+        <!--begin::Form-->
+        <form id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row"
+            data-kt-redirect="../../demo1/dist/apps/ecommerce/catalog/products.html">
+            <!--begin::Aside column-->
+            <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10">
+                <!--begin::Thumbnail settings-->
+                <div class="card card-flush py-4">
+                    <!--begin::Card header-->
+                    <div class="card-header">
+                        <!--begin::Card title-->
+                        <div class="card-title">
+                            <h2>Product Image</h2>
+                        </div>
+                        <!--end::Card title-->
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body text-center pt-0">
+                        <!--begin::Image input-->
+                        <!--begin::Image input placeholder-->
+                        <style>
+                            .image-input-placeholder {
+                                background-image: url('assets/media/svg/files/blank-image.svg');
+                            }
+
+                            [data-theme="dark"] .image-input-placeholder {
+                                background-image: url('assets/media/svg/files/blank-image-dark.svg');
+                            }
+                        </style>
+                        <!--end::Image input placeholder-->
+                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                            data-kt-image-input="true"
+                            style="&lt;br /&gt; &lt;b&gt;Warning&lt;/b&gt;: Undefined variable $imageBg in &lt;b&gt;C:\wamp64\www\keenthemes\core\html\dist\view\pages\apps\ecommerce\catalog\edit-product\_thumbnail.php&lt;/b&gt; on line &lt;b&gt;30&lt;/b&gt;&lt;br /&gt;">
+                            <!--begin::Preview existing avatar-->
+                            <div class="image-input-wrapper w-150px h-150px"></div>
+                            <!--end::Preview existing avatar-->
+                            <!--begin::Label-->
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                <i class="bi bi-pencil-fill fs-7"></i>
+                                <!--begin::Inputs-->
+                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="avatar_remove" />
+                                <!--end::Inputs-->
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Cancel-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+                            <!--end::Cancel-->
+                            <!--begin::Remove-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+                            <!--end::Remove-->
+                        </div>
+                        <!--end::Image input-->
+                        <!--begin::Description-->
+                        <div class="text-muted fs-7">Set the product thumbnail image. Only *.png, *.jpg and *.jpeg image
+                            files are accepted</div>
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Thumbnail settings-->
+            </div>
+            <!--end::Aside column-->
+            <!--begin::Main column-->
+            <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                <!--begin::Tab content-->
+                <div class="tab-content">
+                    <!--begin::Tab pane-->
+                    <div class="tab-pane fade show active" id="kt_ecommerce_add_product_general" role="tab-panel">
+                        <div class="d-flex flex-column gap-7 gap-lg-10">
+                            <!--begin::General options-->
+                            <div class="card card-flush py-4">
+                                <!--begin::Card header-->
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h2>Add products Details</h2>
+                                    </div>
+                                </div>
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body pt-0">
+                                    <!--begin::Input group-->
+                                    <div class="mb-10 fv-row">
+                                        <!--begin::Label-->
+                                        <label class="required form-label">Product Name</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text" name="product_name" class="form-control mb-2"
+                                            placeholder="Product name" value="" />
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                     <!--begin::Input group-->
+                                     <div class="mb-10 fv-row">
+                                        <!--begin::Label-->
+                                        <label class="required form-label">Product_id</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="number" name="product_id" class="form-control mb-2"
+                                            placeholder="Product id" value="" />
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                     <!--begin::Input group-->
+                                     <div class="mb-10 fv-row">
+                                        <!--begin::Label-->
+                                        <label class="required form-label">Tag Number</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="number" name="tag_number" class="form-control mb-2"
+                                            placeholder="tag number" value="" />
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                     <!--begin::Input group-->
+                                     <div class="mb-10 fv-row">
+                                        <!--begin::Label-->
+                                        <label class="required form-label">Product price</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="number" name="product_price" class="form-control mb-2"
+                                            placeholder="Product price" value="" />
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Card body-->
+                                    <div class="mb-10 fv-row">
+                                        <!--begin::Select2-->
+                                        <label class="required form-label">Product status</label>
+
+                                        <select class="form-select mb-2" data-control="select2" data-hide-search="true" data-placeholder="Select an option" id="kt_ecommerce_add_product_status_select">
+                                            <option></option>
+                                            <option value="published" selected="selected">In Stock</option>
+                                            <option value="draft">Repair</option>
+                                            <option value="scheduled">To be repair</option>
+                                            <option value="inactive">Scrap/Lost</option>
+                                            <option value="inactive">Sale</option>
+                                            <option value="scheduled">Assign</option>
+                                        </select>
+                                        <!--end::Select2-->
+                                    </div>
+                                    <!--end::Card body-->
+                                    <!--begin::Input group-->
+                                    <div class="mb-10 fv-row">
+                                    <!--begin::Label-->
+                                        <label class="form-label">Product description</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text" name="product_description" class="form-control mb-2"
+                                            placeholder="Product description" value="" />
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Row-->
+                                    <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                        <!--begin::Col-->
+                                        <div class="col">
+                                            <!--begin::Input group-->
+                                            <div class="fv-row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="fs-6 fw-semibold form-label mt-3">
+                                                    <span class="required">Product variant</span>
+
+                                                </label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <select class="form-control form-control-solid" data-control="select2" data-hide-search="true" data-placeholder="Select an option" id="selectvariant" >
+                                                    <option></option>
+                                                    <option value="in_stock" selected="selected">In Stock</option>
+                                                    <option value="repair">Repair</option>
+                                                    <option value="to_be_repair">To be repair</option>
+                                                    <option value="scrap">Scrap/Lost</option>
+                                                    <option value="sale">Sale</option>
+                                                    <option value="assign">Assign</option>
+                                                </select>
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Input group-->
+                                        </div>
+                                        <!--end::Col-->
+                                        <!--begin::Col-->
+                                        <div class="col">
+                                            <!--begin::Row-->
+                                            <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                                <!--begin::Col-->
+                                                <div class="col">
+                                                    <!--begin::Input group-->
+                                                    <div class="fv-row mb-7">
+                                                        <!--begin::Input-->
+                                                        <input type="text" class="form-control form-control-solid mt-11" name="variant" id="val" value="" />
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                </div>
+                                                <!--end::Col-->
+                                                <!--begin::Col-->
+                                                <div class="col">
+                                                    <!--begin::Input group-->
+                                                    <div class="fv-row mb-7">
+                                                        <!--begin::Input-->
+                                                        <button id="btn" class="form-control btn btn-primary mt-11">ADD</button>
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Row-->
+                                        </div>
+                                        <!--end::Col-->
+                                    </div>
+                                    <!--
+                                    <script>
+                                        let btnAdd = document.getElementById('btn');
+                                        let input = document.getElementById('val');
+                                        let select = document.getElementById('selectvariant');
+                                        
+                                        btnAdd.addEventListener('click',()=>{
+                                            let option = document.createElement('option');
+                                            option.value = input.value.tolowercase();
+                                            option.text = input.value;
+
+                                            let currentIndex = select.options[select.selectedIndex];
+                                            select.add(option,currentIndex);
+                                            input.value = ''
+
+                                        });
+                                    </script>
+                                    -->
+                                    <div class="col">
+                                        <!--begin::Row-->
+                                        <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                            <!--begin::Col-->
+                                            <div class="col">
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7">
+                                                    <label class="form-label">variant description</label>
+                                                    <!--begin::Input-->
+                                                    <input type="text" class="form-control form-control-solid" name="variant_description" id="val" value="" />
+                                                    <!--end::Input-->
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col">
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7">
+                                                    <!--begin::Input-->
+                                                    <button id="btn" class="form-control btn btn-primary mt-8">ADD</button>
+                                                    <!--end::Input-->
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Row-->
+                                    <div class="mb-10 fv-row">
+                                        <!--begin::Input-->
+                                        <input type="text" name="variantlist" class="form-control mb-2"
+                                            placeholder="variant list" value="" />
+                                        <!--end::Input-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::General options-->
+                        </div>
+                    </div>
+                    <!--end::Tab pane-->
+                </div>
+                <!--end::Tab content-->
+                <div class="d-flex justify-content-end">
+                    <!--begin::Button-->
+                    <a href="{% url 'product' %}" id="kt_ecommerce_add_product_cancel"
+                        class="btn btn-light me-5">Cancel</a>
+                    <!--end::Button-->
+                    <!--begin::Button-->
+                    <button type="submit" id="kt_ecommerce_add_product_submit" class="btn btn-primary">
+                        <span class="indicator-label">Save</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                    <!--end::Button-->
+                </div>
+            </div>
+            <!--end::Main column-->
+        </form>
+        <!--end::Form-->
+    </div>
+    <!--end::Content container-->
+</div>
+<!--end::Content-->
+{% endblock content %}
